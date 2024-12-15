@@ -1,38 +1,60 @@
-# firefighter
-Claude experiment
-
 # Firefighter Water Drop Game
 
-## Descrizione Progetto
-Un gioco mobile 2D in cui un pompiere spegne fiamme utilizzando goccioline d'acqua con meccaniche di fisica avanzate.
+## Concept del Gioco
 
-## Tecnologie
-- Framework: Phaser.js
-- Fisica: Matter.js
-- Linguaggio: JavaScript
-- Piattaforme Target: iOS, Android
+### Area di Gioco
+- Rettangolo con proporzioni simili a uno schermo smartphone
+- Orientamento verticale
 
-## Obiettivi
-- Sviluppare un gioco mobile 2D fluido e coinvolgente
-- Implementare sistema di fisica realistico per le goccioline
-- Creare sistema modulare per generazione livelli
-- Garantire compatibilità cross-platform
+### Personaggio Principale
+- Un pompiere stilizzato 
+- Posizionato nella parte bassa dello schermo
+- Movimento limitato: solo destra e sinistra
 
-## Milestone di Sviluppo
-1. Configurazione ambiente di sviluppo
-2. Prototipo personaggio e movimento base
-3. Sistema di sparo e fisica delle goccioline
-4. Meccaniche di interazione fiamme/acqua
-5. Sviluppo sistema livelli
-6. Test e ottimizzazione
-7. Preparazione per app store
+### Meccanica di Sparo
 
-## Stato Corrente
-- Fase: Configurazione iniziale
-- Data Inizio: [DATA_CORRENTE]
-- Prossimo Step: Configurazione ambiente Phaser.js
+#### Goccioline d'Acqua
+- Numero di goccioline definito all'inizio di ogni livello
+- Quantità variabile in base al livello di difficoltà
+- Ogni gocciolina può spegnere una fiammella
 
-## Note di Versione
-### v0.1.0
-- Creazione repository
-- Definizione concept iniziale del gioco
+#### Controllo del Getto
+- Attivazione: tocco sullo schermo
+- Angolazione del getto:
+  - Stato iniziale: 0 gradi (orizzontale)
+  - Mantenendo premuto: angolazione graduale fino a 90 gradi
+  - Continuando a tenere premuto: ritorno graduale a 0 gradi
+- Interruzione del tocco:
+  - Blocco del cambiamento di angolazione
+  - Goccioline continuano il loro percorso fino ad esaurimento
+
+### Obiettivo del Gioco
+- Spegnere tutte le fiammelle del livello
+- Passaggio al livello successivo dopo aver eliminato tutte le fiamme
+
+### Elementi di Gioco
+
+#### Fiammelle
+- Posizionate su piattaforme o oggetti
+- Posizione e comportamento variano nei diversi livelli
+- Ogni fiammella richiede una gocciolina per essere spenta
+
+#### Fisica delle Goccioline
+- Simulazione di comportamento realistico
+- Capacità di:
+  - Rimbalzare
+  - Scivolare sugli oggetti
+  - Interagire con l'ambiente di gioco
+
+### Progressione
+- Livelli a difficoltà crescente
+- Variazioni possibili:
+  - Numero di goccioline
+  - Posizione e numero di fiammelle
+  - Complessità delle piattaforme
+
+## Specifiche Tecniche Previste
+- Sviluppo con Phaser.js
+- Gestione fisica con Matter.js
+- Compatibilità: iOS e Android
+- Grafica procedurale
